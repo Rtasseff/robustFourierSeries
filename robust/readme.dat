@@ -1,0 +1,10 @@
+
+
+This code was taken directly from scikits statsmodels.  (http://statsmodels.sourceforge.net/install.html)
+
+The robustFourierSeries code is dependent on this module, 
+but to avoid needing the whole program I simply 
+pulled out the relevent parts here. 
+All of the code from statsmodels was originaly published under
+the  Modified (3-clause) BSD license at http://opensource.org/licenses/BSD-3-Clause.
+
