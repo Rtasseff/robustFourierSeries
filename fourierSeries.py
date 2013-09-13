@@ -435,6 +435,16 @@ def compConstSlope(yPrime,tPrime,w,damp=0,method='mean'):
 
 	return((eCon-eOsc)/eCon)
 
+def creatFreqVector(minP,maxP,n):
+	"""given the mimimum and maximum period
+	and the number of frequencies, create 
+	a uniformly spaced frequency vector
+	"""
+	minW = np.pi*2/maxP
+	maxW = np.pi*2/minP
+	step = (maxW-minW)/(n-1.)
+	w = np.arange(minW,maxW+step,step)
+	return(w)
 	
 
 	
