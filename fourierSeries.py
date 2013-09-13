@@ -53,7 +53,7 @@ import gpdPerm
 
 
 
-def estSigGStat(yPrime,tPrime,wV=[],nPerm=1000, permEst=True,damp=0,transform=False):
+def estSigGStat(yPrime,tPrime,wV=[],nPerm=1000, permEst=False,damp=0,transform=False):
 	"""Estimates the statistical significance 
 	that the time series data has a periodic component
 	corresponding to at least one of the frequencies 
@@ -94,7 +94,7 @@ def estSigGStat(yPrime,tPrime,wV=[],nPerm=1000, permEst=True,damp=0,transform=Fa
 	else:p = gpdPerm.est(g,gPerm)
 	if p==0:p = np.nan 
 	if np.isnan(p) and permEst:
-		p = (np.sum(gPerm>=g)+1.)/len(gPerm)
+		p = (np.sum(gPerm>=g)+5.)/len(gPerm)
 
 	return p,w
 		
