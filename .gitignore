@@ -1,5 +1,13 @@
+# pics
+*.png
+#other
+p.dat
+g.dat
 *.py[cod]
+__init__*
 
+#vi 
+*.swp
 # C extensions
 *.so
 
