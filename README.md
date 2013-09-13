@@ -26,6 +26,8 @@ many other methods are avalible.
 
 Please excuse the spelling and poor commenting :)
 
+creatJobList* and runPeriodEst* are used for multi-processor jobs with GOLEM
+
 license
 -------------------
 
