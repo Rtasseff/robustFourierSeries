@@ -23,7 +23,7 @@ x = X[index,:]
 
 p,w = estSigGStat(x,t,wV = wV, nPerm=perms,permEst=False,damp=damp)
 if np.isnan(p) or p==0:
-	p,w = estSigGStat(x,t,wV = wV, nPerm=perms*100,permEst=True,damp=damp)
+	p,w = estSigGStat(x,t,wV = wV, nPerm=perms*100,permEst=False,damp=damp)
 
 #f = open(outPath,'a')
 #f.write('>>\t'+str(index)+'\t'+str(p)+'\t'+str(w)+'\n')
