@@ -31,6 +31,8 @@ if np.isnan(p) or p==0:
 #f.flush()
 #os.fsync(f)
 #f.close()
+if ~np.isnan(p): out = '>>\t'+str(index)+'\t%05.4E\t%05.4E\n' % (p,w)
+else: out = '>>\t'+str(index)+'\tnan\tnan\n'
 
-print('>>\t'+str(index)+'\t'+str(p)+'\t'+str(w)+'\n')
+print(out)
 
