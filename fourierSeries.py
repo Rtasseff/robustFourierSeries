@@ -143,7 +143,7 @@ def estSigFreqInd(y,t,w=[],nPerm=1000,damp=0):
 
 	return p,w
 
-def estSigFreq(y,t,w=[],nPerm=1000,permEst=True,damp=0):
+def estSigFreq(y,t,w=[],nPerm=1000,permEst=False,damp=0):
 	"""Estimates the statistical significance 
 	of each specified frequancy.  The periodogram is estimated via
 	robust linear regression, sum of squared trig coeff are used as the test
@@ -190,7 +190,7 @@ def _calcP(stat,statPerm,nPerm, permEst=True):
 		p[i] = gpdPerm.est(stat[i],statPerm[i,:])
 		if p[i]==0:p[i] = np.nan
 		if np.isnan(p[i]) and permEst:
-			p[i] = (np.sum(statPerm[i,:]>=stat[i])+1.)/nPerm
+			p[i] = (np.sum(statPerm[i,:]>=stat[i])+5.)/nPerm
 	return(p)
 
 
