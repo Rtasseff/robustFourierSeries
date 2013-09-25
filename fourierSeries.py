@@ -96,7 +96,7 @@ def estSigGStat(yPrime,tPrime,wV=[],nPerm=1000, permEst=False,damp=0,transform=F
 	if np.isnan(p) and permEst:
 		p = (np.sum(gPerm>=g)+5.)/len(gPerm)
 
-	return p,w
+	return p,w,g
 		
 def _transform(t):
 	return(1/(1-t))
@@ -444,7 +444,7 @@ def creatFreqVector(minP,maxP,n):
 	maxW = np.pi*2/minP
 	step = (maxW-minW)/(n-1.)
 	w = np.arange(minW,maxW+step,step)
-	return(w)
+	return(w[:n])
 	
 
 	
