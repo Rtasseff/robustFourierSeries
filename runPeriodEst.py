@@ -21,9 +21,9 @@ else:
 
 x = X[index,:]
 
-p,w = estSigGStat(x,t,wV = wV, nPerm=perms,permEst=False,damp=damp)
+p,w,g = estSigGStat(x,t,wV = wV, nPerm=perms,permEst=False,damp=damp)
 if np.isnan(p) or p==0:
-	p,w = estSigGStat(x,t,wV = wV, nPerm=perms*100,permEst=False,damp=damp)
+	p,w,g = estSigGStat(x,t,wV = wV, nPerm=perms*100,permEst=False,damp=damp)
 
 #f = open(outPath,'a')
 #f.write('>>\t'+str(index)+'\t'+str(p)+'\t'+str(w)+'\n')
@@ -31,8 +31,8 @@ if np.isnan(p) or p==0:
 #f.flush()
 #os.fsync(f)
 #f.close()
-if ~np.isnan(p): out = '>>\t'+str(index)+'\t%05.4E\t%05.4E\n' % (p,w)
-else: out = '>>\t'+str(index)+'\tnan\tnan\n'
+if ~np.isnan(p): out = '>>\t'+str(index)+'\t%05.4E\t%05.4E\t%05.4E\n' % (p,w,g)
+else: out = '>>\t'+str(index)+'\tnan\tnan\tnan\n'
 
 print(out)
 
